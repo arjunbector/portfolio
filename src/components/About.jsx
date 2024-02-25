@@ -6,14 +6,13 @@ const About = () => {
         <MaskContainer
           revealText={
             <p className="w-full mx-auto px-16 text-slate-200 text-center text-5xl font-bold">
-              Greetings! I'm a <span className="text-orange-400">frontend</span> wizard who brings designs
+              Greetings! I'm a <span className="text-orange-400">frontend</span> wizard who brings designs and ideas
               to life with a blend of creativity and code.
             </p>
           }
           className="h-screen"
         >
-          Greetings! I'm a frontend wizard who brings good code from
-          google and blend it into my code.
+        I'm not quite Tony Stark, but I can code up frontend like Iron Man builds his suits (minus the explosions, hopefully).
         </MaskContainer>
       </div>
   )

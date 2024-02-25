@@ -7,7 +7,7 @@ export const MaskContainer = ({
   children,
   revealText,
   size = 10,
-  revealSize = 250,
+  revealSize = 300,
   className,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
