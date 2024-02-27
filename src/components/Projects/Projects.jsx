@@ -18,9 +18,10 @@ const Projects = () => {
       />
     );
   });
+  const reversedCards = cards.reverse();
   return (
     <main className="min-h-screen w-full bg-[#0F172A] text-slate-200">
-      <div className="flex justify-center"> {cards}</div>
+      <div className="grid grid-cols-3 items-center gap-10"> {reversedCards}</div>
     </main>
   );
 };

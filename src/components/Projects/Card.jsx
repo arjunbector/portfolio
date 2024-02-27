@@ -33,14 +33,16 @@ const Card = ({ cardDetails }) => {
           </Link>
         </div>
         <div>
-          <Link
+          {cardDetails.websiteLink && (
+            <Link
             data-tooltip-id="my-tooltip"
             data-tooltip-content="Project Link"
             target="_blank"
-            href={cardDetails.githubLink}
+            href={cardDetails.websiteLink}
           >
             <FiExternalLink />
           </Link>
+          )}
         </div>
       </div>
     </div>
