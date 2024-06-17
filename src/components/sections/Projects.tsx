@@ -101,7 +101,7 @@ const Projects = () => {
         viewport={{ once: true }}
         className="mx-auto my-2.5 max-w-prose text-center text-sm text-zinc-500 sm:text-base"
       >
-        I've worked on a variety of projects, from simple websites to complex
+        I&apos;ve worked on a variety of projects, from simple websites to complex
         web applications. Here are a few of my favorites.
       </motion.p>
       <div className="mx-auto my-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
