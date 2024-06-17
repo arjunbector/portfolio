@@ -46,7 +46,7 @@ const FormResponses = () => {
                 <TableCell>{response.name}</TableCell>
                 <TableCell>{response.email}</TableCell>
                 <TableCell>{response.message}</TableCell>
-                <TableCell>{new Date(response.createdAt).toLocaleDateString()}</TableCell>
+                <TableCell>{new Date(response.createdAt).toDateString()}</TableCell>
               </TableRow>
             );
           })}
