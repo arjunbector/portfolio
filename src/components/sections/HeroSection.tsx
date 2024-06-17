@@ -41,7 +41,7 @@ const SOCIAL_MEDIA_HANDLES = [
 const HeroSection = () => {
   return (
     <MaxWidthWrapper className="grid min-h-screen grid-cols-1 items-center sm:grid-cols-2">
-      <div className="text-center sm:ml-20 sm:text-left">
+      <div className="text-center sm:ml-20 sm:text-left flex flex-col items-center sm:items-start">
         <h1 className="mb-2 text-5xl font-semibold">
           Hi, I&apos;m Arjun Bector
           <div className="inline-block animate-rotate text-4xl">👋</div>
