@@ -71,7 +71,7 @@ const Connect = () => {
             }}
             type="text"
             placeholder="Name"
-            name="name"
+            name="name "
           />
           <Input
             value={formData.email}
