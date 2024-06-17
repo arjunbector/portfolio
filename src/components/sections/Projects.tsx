@@ -18,29 +18,28 @@ type projectType = {
   technologies: string[];
 };
 
-
 const TechnologyBadge = ({ tech }: { tech: string }) => {
   return (
-    <span className="bg-zinc-100 text-black rounded-md p-1.5 font-semibold text-xs">
+    <span className="rounded-md bg-zinc-100 p-1.5 text-xs font-semibold text-black">
       {tech}
     </span>
   );
 };
 const ProjectCard = ({ project }: { project: projectType }) => {
   return (
-    <div className="border-2 rounded-md flex flex-col overflow-hidden h-[30rem] w-80 sm:h-[30rem] md:w-[30rem] p-3">
+    <div className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border-2 p-3 sm:h-[30rem] md:w-[30rem]">
       <div className="h-52">
         <Image
           src={project.img}
           alt=""
           placeholder="blur"
-          className="w-full h-full object-cover"
+          className="h-full w-full object-cover"
         />
       </div>
-      <div className="flex flex-col justify-between h-full">
+      <div className="flex h-full flex-col justify-between">
         <div>
-          <h1 className="text-xl font-semibold mt-2 mb-1">{project.title}</h1>
-          <p className="text-zinc-700 text-sm">{project.description}</p>
+          <h1 className="mb-1 mt-2 text-xl font-semibold">{project.title}</h1>
+          <p className="text-sm text-zinc-700">{project.description}</p>
         </div>
         <div className="flex flex-col gap-2">
           <div className="flex flex-wrap gap-2">
@@ -50,26 +49,26 @@ const ProjectCard = ({ project }: { project: projectType }) => {
           </div>
           <div className="flex space-x-2">
             <Link
-            target="_blank"
+              target="_blank"
               className={cn(
                 buttonVariants({
                   size: "sm",
-                })
+                }),
               )}
               href={project.deployedLink}
             >
-              <Globe className="h-4 w-4 mr-2" /> Webite
+              <Globe className="mr-2 h-4 w-4" /> Webite
             </Link>
             <Link
-            target="_blank"
+              target="_blank"
               className={cn(
                 buttonVariants({
                   size: "sm",
-                })
+                }),
               )}
               href={project.github}
             >
-              <BsGithub className="h-4 w-4 mr-2" /> Source
+              <BsGithub className="mr-2 h-4 w-4" /> Source
             </Link>
           </div>
         </div>
@@ -80,7 +79,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
 
 const Projects = () => {
   return (
-    <MaxWidthWrapper className="pb-20 flex flex-col">
+    <MaxWidthWrapper className="flex flex-col pb-20">
       <motion.h1
         initial={{ opacity: 0, y: 20 }}
         whileInView={{
@@ -88,7 +87,7 @@ const Projects = () => {
           y: 0,
         }}
         viewport={{ once: true }}
-        className="text-5xl text-center font-bold"
+        className="mx-5 text-center text-4xl font-bold sm:text-5xl"
       >
         Check out my latest work
       </motion.h1>
@@ -100,12 +99,12 @@ const Projects = () => {
         }}
         transition={{ delay: 0.3 }}
         viewport={{ once: true }}
-        className="text-center max-w-prose mx-auto my-2.5 text-zinc-500"
+        className="mx-auto my-2.5 max-w-prose text-center text-sm text-zinc-500 sm:text-base"
       >
         I've worked on a variety of projects, from simple websites to complex
         web applications. Here are a few of my favorites.
       </motion.p>
-      <div className="mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4 my-5">
+      <div className="mx-auto my-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
         {PROJECTS.map((project) => (
           <ProjectCard key={project.title} project={project} />
         ))}
