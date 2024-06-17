@@ -27,7 +27,16 @@ const TechnologyBadge = ({ tech }: { tech: string }) => {
 };
 const ProjectCard = ({ project }: { project: projectType }) => {
   return (
-    <div className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border-2 p-3 sm:h-[30rem] md:w-[30rem]">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      transition={{ delay:0.5}}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={{ once: true }}
+      className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border-2 p-3 sm:h-[30rem] md:w-[30rem]"
+    >
       <div className="h-52">
         <Image
           src={project.img}
@@ -73,7 +82,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
@@ -101,8 +110,8 @@ const Projects = () => {
         viewport={{ once: true }}
         className="mx-auto my-2.5 max-w-prose text-center text-sm text-zinc-500 sm:text-base"
       >
-        I&apos;ve worked on a variety of projects, from simple websites to complex
-        web applications. Here are a few of my favorites.
+        I&apos;ve worked on a variety of projects, from simple websites to
+        complex web applications. Here are a few of my favorites.
       </motion.p>
       <div className="mx-auto my-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
         {PROJECTS.map((project) => (

@@ -15,8 +15,8 @@ const HeroSection = () => {
   return (
     <MaxWidthWrapper className="grid grid-cols-1 sm:grid-cols-2 items-center min-h-screen">
       <div className="text-center sm:text-left sm:ml-20">
-        <h1 className="text-5xl font-semibold mb-2">Hi, I&apos;m Arjun Bector 👋</h1>
-        <p className="max-w-prose sm:text-xl">
+        <h1 className="text-5xl font-semibold mb-2">Hi, I&apos;m Arjun Bector<div className="animate-rotate inline-block text-4xl">👋</div></h1>
+        <p className="max-w-prose text-xl px-10 sm:px-0">
           I&apos;m a passionate software engineer with an interest in
           <br />
           <FlipWords duration={2000} words={WORDS} />
