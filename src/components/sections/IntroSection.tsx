@@ -5,7 +5,7 @@ import TextRevealByWord from "../ui/text-reveal";
 const IntroSection = () => {
   return (
     <MaxWidthWrapper>
-      <TextRevealByWord text="I craft intuitive, responsive web experiences that seamlessly blend aesthetic design with functional elegance." />
+      <TextRevealByWord className="lg:ml-32" text="I craft intuitive, responsive web experiences that seamlessly blend aesthetic design with functional elegance." />
     </MaxWidthWrapper>
   );
 };
