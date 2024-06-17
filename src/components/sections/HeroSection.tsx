@@ -55,7 +55,7 @@ const HeroSection = () => {
           {SOCIAL_MEDIA_HANDLES.map((handle) => {
             const Icon = handle.icon;
             return (
-              <TooltipProvider delayDuration={200}>
+              <TooltipProvider key={handle.name} delayDuration={200}>
                 <Tooltip>
                   <TooltipTrigger>
                     <Link
