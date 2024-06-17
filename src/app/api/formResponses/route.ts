@@ -9,7 +9,6 @@ export async function GET(req: Request) {
         if (!responses) {
             throw new Error("No responses found");
         }
-        console.log(responses);
         return NextResponse.json({ responses }, { status: 200 });
     }
     catch (err: any) {
