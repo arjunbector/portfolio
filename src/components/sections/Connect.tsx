@@ -23,7 +23,8 @@ const Connect = () => {
     });
     if (res.status === 200) {
       toast({
-        description: "Form submitted successfully.",
+        title:"Form submitted successfully.",
+        description: "I'll get back to you soon.",
         variant: "success",
       });
       setFormData({

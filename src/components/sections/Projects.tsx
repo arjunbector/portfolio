@@ -35,7 +35,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
         y: 0,
       }}
       viewport={{ once: true }}
-      className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border-2 p-3 sm:h-[30rem] md:w-[30rem]"
+      className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 sm:h-[30rem] md:w-[30rem] shadow-lg"
     >
       <div className="h-52">
         <Image
