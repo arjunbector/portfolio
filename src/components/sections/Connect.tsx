@@ -26,6 +26,11 @@ const Connect = () => {
         description: "Form submitted successfully.",
         variant: "success",
       });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
     } else {
       toast({
         description: "Failed to submit form.",
@@ -66,6 +71,7 @@ const Connect = () => {
             }}
             type="text"
             placeholder="Name"
+            name="name"
           />
           <Input
             value={formData.email}
