@@ -108,7 +108,7 @@ const Projects = () => {
         }}
         transition={{ delay: 0.3 }}
         viewport={{ once: true }}
-        className="mx-auto my-2.5 max-w-prose text-center text-sm text-zinc-500 sm:text-base"
+        className="mx-auto px-4 my-2.5 max-w-prose text-center text-sm text-zinc-500 sm:text-base"
       >
         I&apos;ve worked on a variety of projects, from simple websites to
         complex web applications. Here are a few of my favorites.
