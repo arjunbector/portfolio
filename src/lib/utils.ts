@@ -22,6 +22,6 @@ export function constructMetadata({
       title, description, images: [{ url: image }]
     },
     icons,
-    metadataBase: new URL("https://arjun-bector-portfolio.vercel.app/")
+    metadataBase: new URL("https://arjunbector.live")
   }
 }
