@@ -14,7 +14,7 @@ type projectType = {
   description: string;
   img: StaticImageData;
   github: string;
-  deployedLink: string;
+  deployedLink?: string;
   technologies: string[];
 };
 
@@ -29,7 +29,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
-      transition={{ delay:0.5}}
+      transition={{ delay: 0.5 }}
       whileInView={{
         opacity: 1,
         y: 0,
@@ -57,17 +57,19 @@ const ProjectCard = ({ project }: { project: projectType }) => {
             ))}
           </div>
           <div className="flex space-x-2">
-            <Link
-              target="_blank"
-              className={cn(
-                buttonVariants({
-                  size: "sm",
-                }),
-              )}
-              href={project.deployedLink}
-            >
-              <Globe className="mr-2 h-4 w-4" /> Webite
-            </Link>
+            {project.deployedLink && (
+              <Link
+                target="_blank"
+                className={cn(
+                  buttonVariants({
+                    size: "sm",
+                  }),
+                )}
+                href={project.deployedLink}
+              >
+                <Globe className="mr-2 h-4 w-4" /> Webite
+              </Link>
+            )}
             <Link
               target="_blank"
               className={cn(
@@ -108,7 +110,7 @@ const Projects = () => {
         }}
         transition={{ delay: 0.3 }}
         viewport={{ once: true }}
-        className="mx-auto px-4 my-2.5 max-w-prose text-center text-sm text-zinc-500 sm:text-base"
+        className="mx-auto my-2.5 max-w-prose px-4 text-center text-sm text-zinc-500 sm:text-base"
       >
         I&apos;ve worked on a variety of projects, from simple websites to
         complex web applications. Here are a few of my favorites.
