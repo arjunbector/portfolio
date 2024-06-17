@@ -48,7 +48,7 @@ const Connect = () => {
   return (
     <MaxWidthWrapper className="flex flex-col items-center py-10">
       <h1 className="mb-1.5 text-center text-4xl font-bold sm:mb-5 sm:text-5xl">
-        Let&apso;s connect
+        Let&apos;s connect
       </h1>
       <p className="mx-4 max-w-prose text-center text-sm text-zinc-500 sm:text-base">
         Have a project in mind or just want to say hello? Fill out the form
