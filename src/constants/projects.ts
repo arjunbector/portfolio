@@ -1,4 +1,4 @@
-import ecell from "@/../public/projects/ecell.png";
+// import ecell from "@/../public/projects/ecell.png";
 import caseCobra from "@/../public/projects/casecobra.png";
 import contactManager from "@/../public/projects/contactmanager.png";
 import moviePulse from "@/../public/projects/moviepulse.png";
@@ -22,15 +22,15 @@ export const PROJECTS = [
             "Shadcn UI"
         ],
     },
-    {
-        title: "E-CELL Website",
-        description:
-            "Explore E-Cell VIT Vellore’s official website, showcasing club's vibrant entrepreneurial activities and initiatives with Captivating animations and user-friendly navigation.",
-        img: ecell,
-        github: "https://github.com/arjunbector/ECell-Website",
-        deployedLink: "https://e-cell-website-mauve.vercel.app/",
-        technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Uploadthing"],
-    },
+    // {
+    //     title: "E-CELL Website",
+    //     description:
+    //         "Explore E-Cell VIT Vellore’s official website, showcasing club's vibrant entrepreneurial activities and initiatives with Captivating animations and user-friendly navigation.",
+    //     img: ecell,
+    //     github: "https://github.com/arjunbector/ECell-Website",
+    //     deployedLink: "https://e-cell-website-mauve.vercel.app/",
+    //     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Uploadthing"],
+    // },
     {
         title: "Contact Manager",
         description:
