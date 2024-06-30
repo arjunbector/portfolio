@@ -2,6 +2,7 @@
 import caseCobra from "@/../public/projects/casecobra.png";
 import contactManager from "@/../public/projects/contactmanager.png";
 import moviePulse from "@/../public/projects/moviepulse.png";
+import ksham from "@/../public/projects/ksham.png";
 
 export const PROJECTS = [
     {
@@ -21,6 +22,13 @@ export const PROJECTS = [
             "Stripe",
             "Shadcn UI"
         ],
+    },
+    {
+        title: "Ksham Innovation",
+        description: "At Ksham Innovation, the goal is to enhance the hearing aid adoption rate in India by offering affordable, fashionable Smart Aid Glasses. The website showcases the company's products and services.",
+        img: ksham,
+        deployedLink: "https://www.kshaminnovation.in",
+        technologies: ["Next.js", "Tailwind CSS","Typescript", "Framer Motion", "Shadcn UI", "MongoDB","AWS S3"],
     },
     // {
     //     title: "E-CELL Website",
@@ -45,7 +53,7 @@ export const PROJECTS = [
             "A Next.js project that allows users to search for different movies and retrieve detailed information about them.",
         img: moviePulse,
         github: "https://github.com/arjunbector/MoviesPulse",
-        deployedLink:"https://arjunbector-moviespulse.netlify.app/",
-        technologies: ["Next.js", "Tailwind CSS", "OMDb API", "Framre Motion"],
+        deployedLink: "https://arjunbector-moviespulse.netlify.app/",
+        technologies: ["Next.js", "Tailwind CSS", "OMDb API", "Framer Motion"],
     },
 ];

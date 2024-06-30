@@ -13,7 +13,7 @@ type projectType = {
   title: string;
   description: string;
   img: StaticImageData;
-  github: string;
+  github?: string;
   deployedLink?: string;
   technologies: string[];
 };
@@ -35,7 +35,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
         y: 0,
       }}
       viewport={{ once: true }}
-      className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 sm:h-[30rem] md:w-[30rem] shadow-lg"
+      className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-lg sm:h-[30rem] md:w-[30rem]"
     >
       <div className="h-52">
         <Image
@@ -70,17 +70,19 @@ const ProjectCard = ({ project }: { project: projectType }) => {
                 <Globe className="mr-2 h-4 w-4" /> Webite
               </Link>
             )}
-            <Link
-              target="_blank"
-              className={cn(
-                buttonVariants({
-                  size: "sm",
-                }),
-              )}
-              href={project.github}
-            >
-              <BsGithub className="mr-2 h-4 w-4" /> Source
-            </Link>
+            {project.github && (
+              <Link
+                target="_blank"
+                className={cn(
+                  buttonVariants({
+                    size: "sm",
+                  }),
+                )}
+                href={project.github}
+              >
+                <BsGithub className="mr-2 h-4 w-4" /> Source
+              </Link>
+            )}
           </div>
         </div>
       </div>
