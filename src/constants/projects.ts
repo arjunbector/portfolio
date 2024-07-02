@@ -56,13 +56,13 @@ export const PROJECTS = [
         github: "https://github.com/arjunbector/Contact-Manager-Backend",
         technologies: ["Express", "MongoDB", "JWT", "Mongoose", "Bcrypt", "Cors", "Dotenv", "Nodemon"],
     },
-    {
-        title: "Movie Pulse",
-        description:
-            "A Next.js project that allows users to search for different movies and retrieve detailed information about them.",
-        img: moviePulse,
-        github: "https://github.com/arjunbector/MoviesPulse",
-        deployedLink: "https://arjunbector-moviespulse.netlify.app/",
-        technologies: ["Next.js", "Tailwind CSS", "OMDb API", "Framer Motion"],
-    },
+    // {
+    //     title: "Movie Pulse",
+    //     description:
+    //         "A Next.js project that allows users to search for different movies and retrieve detailed information about them.",
+    //     img: moviePulse,
+    //     github: "https://github.com/arjunbector/MoviesPulse",
+    //     deployedLink: "https://arjunbector-moviespulse.netlify.app/",
+    //     technologies: ["Next.js", "Tailwind CSS", "OMDb API", "Framer Motion"],
+    // },
 ];
