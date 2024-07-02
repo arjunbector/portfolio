@@ -3,12 +3,20 @@ import caseCobra from "@/../public/projects/casecobra.png";
 import contactManager from "@/../public/projects/contactmanager.png";
 import moviePulse from "@/../public/projects/moviepulse.png";
 import ksham from "@/../public/projects/ksham.png";
+import lingo from "@/../public/projects/lingo.png";
 
 export const PROJECTS = [
     {
+        title: "Lingo - Duolingo Clone",
+        description: "Lingo is a language learning platform that uses spaced repetition to help users learn new languages. The app provides a seamless learning experience with a clean and intuitive UI.",
+        img: lingo,
+        github: "https://github.com/arjunbector/Lingo",
+        deployedLink: "https://lingo-three-pi.vercel.app/",
+        technologies: ["Next.js", "Tailwind CSS", "Typescript", "MongoDB", "Shadcn UI", "Clerk",]
+    },
+    {
         title: "Case Cobra",
-        description:
-            "Developed a full-stack phone case e-commerce website, featuring secure user authentication, dynamic product management, and a seamless shopping cart and checkout experience.",
+        description: "Case Cobra is an e-commerce platform that sells premium phone cases. The website is built with Next.js and Tailwind CSS, and features a clean and modern UI.",
         img: caseCobra,
         github: "https://github.com/arjunbector/phone-case-ecommerce",
         deployedLink: "https://phone-case-ecommerce.vercel.app",
@@ -20,7 +28,8 @@ export const PROJECTS = [
             "Uploadthing",
             "MongoDB",
             "Stripe",
-            "Shadcn UI"
+            "Shadcn UI",
+            "Kinde"
         ],
     },
     {
@@ -28,7 +37,7 @@ export const PROJECTS = [
         description: "At Ksham Innovation, the goal is to enhance the hearing aid adoption rate in India by offering affordable, fashionable Smart Aid Glasses. The website showcases the company's products and services.",
         img: ksham,
         deployedLink: "https://www.kshaminnovation.in",
-        technologies: ["Next.js", "Tailwind CSS","Typescript", "Framer Motion", "Shadcn UI", "MongoDB","AWS S3"],
+        technologies: ["Next.js", "Tailwind CSS", "Typescript", "Framer Motion", "Shadcn UI", "MongoDB", "AWS S3"],
     },
     // {
     //     title: "E-CELL Website",
