@@ -67,8 +67,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
                 )}
                 href={project.deployedLink}
               >
-                <Globe className="mr-2 h-4 w-4" /> Webite
-              </Link>
+                <Globe className="mr-2 h-4 w-4" />Website</Link>
             )}
             {project.github && (
               <Link
