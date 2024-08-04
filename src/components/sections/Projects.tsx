@@ -27,65 +27,69 @@ const TechnologyBadge = ({ tech }: { tech: string }) => {
 };
 const ProjectCard = ({ project }: { project: projectType }) => {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      transition={{ delay: 0.5 }}
-      whileInView={{
-        opacity: 1,
-        y: 0,
-      }}
-      viewport={{ once: true }}
-      className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-lg sm:h-[30rem] md:w-[30rem]"
-    >
-      <div className="h-52">
-        <Image
-          src={project.img}
-          alt=""
-          placeholder="blur"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="flex h-full flex-col justify-between">
-        <div>
-          <h1 className="mb-1 mt-2 text-xl font-semibold">{project.title}</h1>
-          <p className="text-sm text-zinc-700">{project.description}</p>
+    <Link href={project.deployedLink || project.github!} target="_blank">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        transition={{ delay: 0.5 }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{ once: true }}
+        className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-lg sm:h-[30rem] md:w-[30rem]"
+      >
+        <div className="h-52">
+          <Image
+            src={project.img}
+            alt=""
+            placeholder="blur"
+            className="h-full w-full object-cover"
+          />
         </div>
-        <div className="flex flex-col gap-2">
-          <div className="flex flex-wrap gap-2">
-            {project.technologies.map((tech) => (
-              <TechnologyBadge key={tech} tech={tech} />
-            ))}
+        <div className="flex h-full flex-col justify-between">
+          <div>
+            <h1 className="mb-1 mt-2 text-xl font-semibold">{project.title}</h1>
+            <p className="text-sm text-zinc-700">{project.description}</p>
           </div>
-          <div className="flex space-x-2">
-            {project.deployedLink && (
-              <Link
-                target="_blank"
-                className={cn(
-                  buttonVariants({
-                    size: "sm",
-                  }),
-                )}
-                href={project.deployedLink}
-              >
-                <Globe className="mr-2 h-4 w-4" />Website</Link>
-            )}
-            {project.github && (
-              <Link
-                target="_blank"
-                className={cn(
-                  buttonVariants({
-                    size: "sm",
-                  }),
-                )}
-                href={project.github}
-              >
-                <BsGithub className="mr-2 h-4 w-4" /> Source
-              </Link>
-            )}
+          <div className="flex flex-col gap-2">
+            <div className="flex flex-wrap gap-2">
+              {project.technologies.map((tech) => (
+                <TechnologyBadge key={tech} tech={tech} />
+              ))}
+            </div>
+            <div className="flex space-x-2">
+              {project.deployedLink && (
+                <Link
+                  target="_blank"
+                  className={cn(
+                    buttonVariants({
+                      size: "sm",
+                    }),
+                  )}
+                  href={project.deployedLink}
+                >
+                  <Globe className="mr-2 h-4 w-4" />
+                  Website
+                </Link>
+              )}
+              {project.github && (
+                <Link
+                  target="_blank"
+                  className={cn(
+                    buttonVariants({
+                      size: "sm",
+                    }),
+                  )}
+                  href={project.github}
+                >
+                  <BsGithub className="mr-2 h-4 w-4" /> Source
+                </Link>
+              )}
+            </div>
           </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </Link>
   );
 };
 
