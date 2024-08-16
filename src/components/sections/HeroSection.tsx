@@ -5,7 +5,7 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
 import { SiMongodb } from "react-icons/si";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import { FlipWords } from "../ui/flip-words";
-import { Mail } from "lucide-react";
+import { FileText, Mail } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import { buttonVariants } from "../ui/button";
@@ -37,6 +37,11 @@ const SOCIAL_MEDIA_HANDLES = [
     url: "mailto:arjunbector@gmail.com",
     icon: Mail,
   },
+  {
+    name:"Resume",
+    url:"https://drive.google.com/file/d/1pHG5odzfUFz8t2cL_bzgx7iPZD_Z_L03/view?usp=sharing",
+    icon: FileText
+  }
 ];
 const HeroSection = () => {
   return (
