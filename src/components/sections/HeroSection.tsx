@@ -39,7 +39,7 @@ const SOCIAL_MEDIA_HANDLES = [
   },
   {
     name:"Resume",
-    url:"https://drive.google.com/file/d/1pHG5odzfUFz8t2cL_bzgx7iPZD_Z_L03/view?usp=sharing",
+    url:"https://drive.google.com/file/d/1pHG5odzfUFz8t2cL_bzgx7iPZD_Z_L03/view?usp=https://drive.google.com/file/d/1L3_OG4n4DD9SWuEaTAWP-EEBAw-coYG9/view?usp=sharing",
     icon: FileText
   }
 ];
