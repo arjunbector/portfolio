@@ -11,7 +11,7 @@ export const PROJECTS = [
         description: "Lingo is a language learning platform that uses spaced repetition to help users learn new languages. The app provides a seamless learning experience with a clean and intuitive UI.",
         img: lingo,
         github: "https://github.com/arjunbector/Lingo",
-        deployedLink: "https://lingo-three-pi.vercel.app/",
+        deployedLink: "https://lingo.arjunbector.live",
         technologies: ["Next.js", "Tailwind CSS", "Typescript", "MongoDB", "Shadcn UI", "Clerk",]
     },
     {
