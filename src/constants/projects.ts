@@ -4,8 +4,24 @@ import contactManager from "@/../public/projects/contactmanager.png";
 import moviePulse from "@/../public/projects/moviepulse.png";
 import ksham from "@/../public/projects/ksham.png";
 import lingo from "@/../public/projects/lingo.png";
+import techTribe from "@/../public/projects/tech-tribe.png";
 
 export const PROJECTS = [
+    {
+        title: "Tech Tribe",
+        description: " A social hub where tech enthusiasts connect, collaborate, and share the latest in innovation and tech trends, or memes sometimes.",
+        img: techTribe,
+        github: "https://github.com/arjunbector/Tech-Tribe",
+        deployedLink: "https://techtribe.arjunbector.live",
+        technologies: ["Next.js", "Tailwind CSS", "Typescript", "PostgreSQL", "Shadcn UI", "Lucia Auth", "Prisma", "React-Query", "Uploadthing"]
+    },
+    {
+        title: "Ksham Innovation",
+        description: "At Ksham Innovation, the goal is to enhance the hearing aid adoption rate in India by offering affordable, fashionable Smart Aid Glasses. The website showcases the company's products and services.",
+        img: ksham,
+        deployedLink: "https://www.kshaminnovation.in",
+        technologies: ["Next.js", "Tailwind CSS", "Typescript", "Framer Motion", "Shadcn UI", "MongoDB", "AWS S3"],
+    },
     {
         title: "Lingo - Duolingo Clone",
         description: "Lingo is a language learning platform that uses spaced repetition to help users learn new languages. The app provides a seamless learning experience with a clean and intuitive UI.",
@@ -32,13 +48,6 @@ export const PROJECTS = [
             "Kinde"
         ],
     },
-    {
-        title: "Ksham Innovation",
-        description: "At Ksham Innovation, the goal is to enhance the hearing aid adoption rate in India by offering affordable, fashionable Smart Aid Glasses. The website showcases the company's products and services.",
-        img: ksham,
-        deployedLink: "https://www.kshaminnovation.in",
-        technologies: ["Next.js", "Tailwind CSS", "Typescript", "Framer Motion", "Shadcn UI", "MongoDB", "AWS S3"],
-    },
     // {
     //     title: "E-CELL Website",
     //     description:
@@ -48,15 +57,15 @@ export const PROJECTS = [
     //     deployedLink: "https://e-cell-website-mauve.vercel.app/",
     //     technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "Uploadthing"],
     // },
-    {
-        title: "Contact Manager",
-        description:
-            "Contact Manager App Backend provides a backend server for managing contacts. It includes authentication features and CRUD operations for contacts.",
-        img: contactManager,
-        github: "https://github.com/arjunbector/Contact-Manager-Backend",
-        technologies: ["Express", "MongoDB", "JWT", "Mongoose", "Bcrypt", "Cors", "Dotenv", "Nodemon"],
-    },
     // {
+    //     title: "Contact Manager",
+    //     description:
+    //         "Contact Manager App Backend provides a backend server for managing contacts. It includes authentication features and CRUD operations for contacts.",
+    //     img: contactManager,
+    //     github: "https://github.com/arjunbector/Contact-Manager-Backend",
+    //     technologies: ["Express", "MongoDB", "JWT", "Mongoose", "Bcrypt", "Cors", "Dotenv", "Nodemon"],
+    // },
+    // // {
     //     title: "Movie Pulse",
     //     description:
     //         "A Next.js project that allows users to search for different movies and retrieve detailed information about them.",

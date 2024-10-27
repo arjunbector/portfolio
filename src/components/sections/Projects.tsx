@@ -1,13 +1,14 @@
 "use client";
 import { PROJECTS } from "@/constants/projects";
 import { cn } from "@/lib/utils";
-import { motion } from "framer-motion";
 import { Globe } from "lucide-react";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
 import { buttonVariants } from "../ui/button";
+import BlurFade from "../ui/blur-fade";
+import { inView } from "framer-motion";
 
 type projectType = {
   title: string;
@@ -28,16 +29,7 @@ const TechnologyBadge = ({ tech }: { tech: string }) => {
 const ProjectCard = ({ project }: { project: projectType }) => {
   return (
     <Link href={project.deployedLink || project.github!} target="_blank">
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        transition={{ delay: 0.5 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{ once: true }}
-        className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-lg sm:h-[30rem] md:w-[30rem]"
-      >
+      <div className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-lg sm:h-[30rem] md:w-[30rem]">
         <div className="h-52">
           <Image
             src={project.img}
@@ -88,7 +80,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
             </div>
           </div>
         </div>
-      </motion.div>
+      </div>
     </Link>
   );
 };
@@ -96,33 +88,25 @@ const ProjectCard = ({ project }: { project: projectType }) => {
 const Projects = () => {
   return (
     <MaxWidthWrapper className="flex flex-col pb-20">
-      <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        viewport={{ once: true }}
-        className="mx-5 text-center text-4xl font-bold sm:text-5xl"
-      >
-        Check out my latest work
-      </motion.h1>
-      <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{
-          opacity: 1,
-          y: 0,
-        }}
-        transition={{ delay: 0.3 }}
-        viewport={{ once: true }}
-        className="mx-auto my-2.5 max-w-prose px-4 text-center text-sm text-zinc-500 sm:text-base"
-      >
-        I&apos;ve worked on a variety of projects, from simple websites to
-        complex web applications. Here are a few of my favorites.
-      </motion.p>
+      <BlurFade inView>
+        <h1 className="mx-5 text-center text-4xl font-bold sm:text-5xl">
+          Check out my latest work
+        </h1>
+        <p className="mx-auto my-2.5 max-w-prose px-4 text-center text-sm text-zinc-500 sm:text-base">
+          I&apos;ve worked on a variety of projects, from simple websites to
+          complex web applications. Here are a few of my favorites.
+        </p>
+      </BlurFade>
       <div className="mx-auto my-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-        {PROJECTS.map((project) => (
-          <ProjectCard key={project.title} project={project} />
+        {PROJECTS.map((project, idx) => (
+          <BlurFade
+            key={project.title}
+            delay={0.25 + idx * 0.05}
+            inView
+            inViewMargin="-50px"
+          >
+            <ProjectCard key={project.title} project={project} />
+          </BlurFade>
         ))}
       </div>
     </MaxWidthWrapper>
