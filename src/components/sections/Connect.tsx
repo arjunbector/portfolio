@@ -7,6 +7,8 @@ import { Textarea } from "../ui/textarea";
 import { useToast } from "../ui/use-toast";
 import axios from "axios";
 import { Loader2 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import CustomFormError from "../ui/custom-error";
 
 const Connect = () => {
   const { toast } = useToast();
@@ -16,14 +18,30 @@ const Connect = () => {
     email: "",
     message: "",
   });
-  const submitForm = async () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    mode: "all",
+    defaultValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+  });
+  const submitForm = async (data: {
+    name: string;
+    email: string;
+    message: string;
+  }) => {
     setLoading(true);
     const res = await axios.post("/api/submitForm", {
-      ...formData,
+      ...data,
     });
     if (res.status === 200) {
       toast({
-        title:"Form submitted successfully.",
+        title: "Form submitted successfully.",
         description: "I'll get back to you soon.",
         variant: "success",
       });
@@ -40,17 +58,6 @@ const Connect = () => {
     }
     setLoading(false);
   };
-  const handleFormSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
-      toast({
-        description: "Fill up all the fields.",
-        variant: "destructive",
-      });
-      return;
-    }
-    submitForm();
-  };
   return (
     <MaxWidthWrapper className="flex flex-col items-center py-10">
       <h1 className="mb-1.5 text-center text-4xl font-bold sm:mb-5 sm:text-5xl">
@@ -62,34 +69,39 @@ const Connect = () => {
       </p>
       <div className="w-full">
         <form
-          onSubmit={handleFormSubmit}
+          onSubmit={handleSubmit(submitForm)}
           className="sm:px-30 mt-5 flex flex-col space-y-3 px-10 md:px-60"
         >
-          <Input
-            value={formData.name}
-            onChange={(e) => {
-              setFormData({ ...formData, name: e.target.value });
-            }}
-            type="text"
-            placeholder="Name"
-            name="name "
-          />
-          <Input
-            value={formData.email}
-            onChange={(e) => {
-              setFormData({ ...formData, email: e.target.value });
-            }}
-            type="email"
-            placeholder="Email"
-          />
-          <Textarea
-            value={formData.message}
-            onChange={(e) => {
-              setFormData({ ...formData, message: e.target.value });
-            }}
-            rows={5}
-            placeholder="Message"
-          />
+          <div>
+            <Input
+              type="text"
+              placeholder="Name"
+              {...register("name", { required: "Name is required" })}
+            />
+            {errors.name && (
+              <CustomFormError>{errors.name.message}</CustomFormError>
+            )}
+          </div>
+          <div>
+            <Input
+              {...register("email", { required: "Email is required" })}
+              type="email"
+              placeholder="Email"
+            />
+            {errors.email && (
+              <CustomFormError>{errors.email.message}</CustomFormError>
+            )}
+          </div>
+          <div>
+            <Textarea
+              rows={5}
+              placeholder="Message"
+              {...register("message", { required: "Message is required" })}
+            />
+            {errors.message && (
+              <CustomFormError>{errors.message.message}</CustomFormError>
+            )}
+          </div>
           <div className="flex justify-end">
             <Button type="submit" className="min-w-20" disabled={loading}>
               {loading ? (
