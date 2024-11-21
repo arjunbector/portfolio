@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 
 export function constructMetadata({
   title = "Arjun Bector",
-  description = "Welcome to my web development portfolio! I'm Arjun Bector, a skilled web developer specializing in full-stack development. Explore my innovative web solutions, responsive designs, and interactive applications built with HTML, CSS, JavaScript, React, Node.js, and more. Check out my projects and see how I can bring your digital vision to life.",
+  description = "Arjun Bector | Full-Stack Developer | Building modern, scalable web solutions.",
   image = "/image.jpg",
   icons = "/favicon.ico"
 }: {

@@ -1,48 +1,27 @@
 import OrbitingCircles from "@/components/ui/orbiting-circles";
-import { BiLogoAws } from "react-icons/bi";
-import { FaFigma, FaGithub, FaLinkedin } from "react-icons/fa";
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
-import { SiMongodb } from "react-icons/si";
-import MaxWidthWrapper from "../ui/MaxWidthWrapper";
-import { FlipWords } from "../ui/flip-words";
-import { FileText, Mail } from "lucide-react";
-import Link from "next/link";
-import { cn } from "@/lib/utils";
-import { buttonVariants } from "../ui/button";
 import {
   Tooltip,
   TooltipContent,
-  TooltipTrigger,
   TooltipProvider,
+  TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { SOCIAL_MEDIA_HANDLES } from "@/constants/social-media";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
+import { BiLogoAws } from "react-icons/bi";
+import { FaFigma, FaGithub } from "react-icons/fa";
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiMongodb } from "react-icons/si";
+import MaxWidthWrapper from "../ui/MaxWidthWrapper";
+import { buttonVariants } from "../ui/button";
+import { FlipWords } from "../ui/flip-words";
 const WORDS = [
   "Frontend Frameworks",
   "Backend Development",
   "Javascript Libraries",
   "UI/UX Designs",
 ];
-const SOCIAL_MEDIA_HANDLES = [
-  {
-    name: "Github",
-    url: "https://github.com/arjunbector/",
-    icon: FaGithub,
-  },
-  {
-    name: "LinkedIn",
-    url: "https://www.linkedin.com/in/arjun-bector",
-    icon: FaLinkedin,
-  },
-  {
-    name: "Email",
-    url: "mailto:arjunbector@gmail.com",
-    icon: Mail,
-  },
-  {
-    name:"Resume",
-    url:"https://drive.google.com/file/d/1ddGcPSoQ_IBZQm4EQc69Ji569omw-8Ct/view?usp=sharing",
-    icon: FileText
-  }
-];
+
 const HeroSection = () => {
   return (
     <MaxWidthWrapper className="grid min-h-screen grid-cols-1 items-center sm:grid-cols-2">
