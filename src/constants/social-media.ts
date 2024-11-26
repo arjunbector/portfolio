@@ -19,7 +19,7 @@ export const SOCIAL_MEDIA_HANDLES = [
     },
     {
       name:"Resume",
-      url:"https://drive.google.com/file/d/1ddGcPSoQ_IBZQm4EQc69Ji569omw-8Ct/view?usp=sharing",
+      url:"https://drive.google.com/file/d/1OGYIhof7FrvSol3fhUmL9-N3dc3Grmt_/view?usp=sharing",
       icon: FileText
     }
   ];
