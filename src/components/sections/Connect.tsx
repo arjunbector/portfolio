@@ -59,7 +59,7 @@ const Connect = () => {
     setLoading(false);
   };
   return (
-    <MaxWidthWrapper className="flex flex-col items-center py-10">
+    <MaxWidthWrapper className="flex flex-col items-center py-10" id="contact">
       <h1 className="mb-1.5 text-center text-4xl font-bold sm:mb-5 sm:text-5xl">
         Let&apos;s connect
       </h1>

@@ -87,7 +87,7 @@ const ProjectCard = ({ project }: { project: projectType }) => {
 
 const Projects = () => {
   return (
-    <MaxWidthWrapper className="flex flex-col pb-20">
+    <MaxWidthWrapper className="flex flex-col pb-20" id="projects">
       <BlurFade inView>
         <h1 className="mx-5 text-center text-4xl font-bold sm:text-5xl">
           Check out my latest work

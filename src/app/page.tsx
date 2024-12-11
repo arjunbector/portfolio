@@ -6,7 +6,7 @@ import Projects from "@/components/sections/Projects";
 export default function Home() {
 
   return (
-    <main className="min-h-screen">
+    <main>
      <HeroSection/>
      <IntroSection/>
      <Projects/>
