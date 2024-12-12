@@ -15,7 +15,7 @@ const Responses = ({ adminPassword }: { adminPassword: string | undefined }) => 
     }
   };
   return (
-    <main>
+    <main className="pt-20">
       <MaxWidthWrapper>
         {allowAccess ? (
           <FormResponses />
