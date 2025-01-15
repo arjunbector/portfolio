@@ -1,6 +1,8 @@
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import NavLink from './NavLink';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import NavLink from "./NavLink";
+import { useNavbar } from "./HeaderContext";
+import { cn } from "@/lib/utils";
 
 interface MobileMenuProps {
   isOpen: boolean;
@@ -12,8 +14,8 @@ const menuVariants = {
     height: 0,
     transition: {
       duration: 0.3,
-      when: "afterChildren"
-    }
+      when: "afterChildren",
+    },
   },
   open: {
     opacity: 1,
@@ -21,26 +23,38 @@ const menuVariants = {
     transition: {
       duration: 0.3,
       when: "beforeChildren",
-      staggerChildren: 0.1
-    }
-  }
+      staggerChildren: 0.1,
+    },
+  },
 };
 
 const MobileMenu = ({ isOpen }: MobileMenuProps) => {
+  const { changeColor } = useNavbar();
   return (
     <AnimatePresence>
       {isOpen && (
         <motion.div
-          className="md:hidden overflow-hidden"
+          className="overflow-hidden md:hidden"
           initial="closed"
           animate="open"
           exit="closed"
           variants={menuVariants}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white">
-            <NavLink href="#" isMobile delay={1}>About</NavLink>
-            <NavLink href="#projects" isMobile delay={2}>Projects</NavLink>
-            <NavLink href="#contact" isMobile delay={4}>Contact</NavLink>
+          <div
+            className={cn(
+              "space-y-1 px-2 pb-3 pt-2 sm:px-3",
+              changeColor === "dark" ? "bg-[#121212] text-white" : "bg-white text-gray-900",
+            )}
+          >
+            <NavLink href="#" isMobile delay={1}>
+              About
+            </NavLink>
+            <NavLink href="#projects" isMobile delay={2}>
+              Projects
+            </NavLink>
+            <NavLink href="#contact" isMobile delay={4}>
+              Contact
+            </NavLink>
           </div>
         </motion.div>
       )}

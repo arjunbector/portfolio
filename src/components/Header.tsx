@@ -6,24 +6,38 @@ import SocialLinks from "./header/SocialLinks";
 import MenuButton from "./header/MenuButtton";
 import MobileMenu from "./header/MobileMenu";
 import MaxWidthWrapper from "./ui/MaxWidthWrapper";
+import { useNavbar } from "./header/HeaderContext";
+import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const { changeColor } = useNavbar();
 
   return (
-    <header className="fixed z-50 w-full bg-white/80 shadow-sm backdrop-blur-sm">
+    <header
+      className={cn(
+        "fixed z-50 w-full shadow-sm backdrop-blur-md bg-opacity-80",
+        changeColor === "dark" ? "bg-[#121212]" : "bg-white",
+      )}
+    >
       <MaxWidthWrapper>
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
+          <div
+            className={cn(
+              "flex h-16 items-center justify-between",
+              changeColor === "dark" ? "text-gray-100" : "text-gray-900",
+            )}
+          >
             <motion.div
               className="flex-shrink-0"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <a href="#" className="text-2xl font-bold text-gray-900">
+              <Link href="#" className="text-2xl font-bold">
                 AB
-              </a>
+              </Link>
             </motion.div>
 
             {/* Desktop Navigation */}

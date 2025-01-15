@@ -1,7 +1,7 @@
+import AnimatedProjects from "@/components/sections/AnimatedProjects";
 import Connect from "@/components/sections/Connect";
 import HeroSection from "@/components/sections/HeroSection";
 import IntroSection from "@/components/sections/IntroSection";
-import Projects from "@/components/sections/Projects";
 
 export default function Home() {
 
@@ -9,7 +9,7 @@ export default function Home() {
     <main>
      <HeroSection/>
      <IntroSection/>
-     <Projects/>
+     <AnimatedProjects/>
      <Connect/>
     </main>
   );

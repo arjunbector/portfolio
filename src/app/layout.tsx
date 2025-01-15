@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { Inter } from "next/font/google";
 import { ReactLenis } from "@/lib/lenis";
 import "./globals.css";
+import { NavbarProvider } from "@/components/header/HeaderContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,10 +20,12 @@ export default function RootLayout({
     <html lang="en">
       <ReactLenis root>
         <body className={inter.className}>
-          <Header />
-          <Toaster />
-          {children}
-          <Analytics />
+          <NavbarProvider>
+            <Header />
+            <Toaster />
+            {children}
+            <Analytics />
+          </NavbarProvider>
         </body>
       </ReactLenis>
     </html>

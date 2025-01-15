@@ -9,7 +9,7 @@ interface NavLinkProps {
 }
 
 const NavLink = ({ href, children, isMobile, delay = 0 }: NavLinkProps) => {
-  const baseClasses = "text-gray-700 hover:text-gray-900 transition-colors";
+  const baseClasses = "transition-colors";
   const mobileClasses = "block px-3 py-2";
   const desktopClasses = "";
 

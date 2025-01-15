@@ -1,6 +1,6 @@
-import React from 'react';
-import { Menu, X } from 'lucide-react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from "react";
+import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface MenuButtonProps {
   isOpen: boolean;
@@ -11,7 +11,7 @@ const MenuButton = ({ isOpen, onClick }: MenuButtonProps) => {
   return (
     <button
       onClick={onClick}
-      className="text-gray-700 hover:text-gray-900 md:hidden"
+      className="md:hidden"
       aria-label={isOpen ? "Close menu" : "Open menu"}
     >
       <AnimatePresence mode="wait">

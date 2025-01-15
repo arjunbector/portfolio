@@ -59,61 +59,74 @@ const Connect = () => {
     setLoading(false);
   };
   return (
-    <MaxWidthWrapper className="flex flex-col items-center py-10" id="contact">
-      <h1 className="mb-1.5 text-center text-4xl font-bold sm:mb-5 sm:text-5xl">
-        Let&apos;s connect
-      </h1>
-      <p className="mx-4 max-w-prose text-center text-sm text-zinc-500 sm:text-base">
-        Have a project in mind or just want to say hello? Fill out the form
-        below and I&apos;ll get back to you as soon as possible.
-      </p>
-      <div className="w-full">
-        <form
-          onSubmit={handleSubmit(submitForm)}
-          className="sm:px-30 mt-5 flex flex-col space-y-3 px-10 md:px-60"
-        >
-          <div>
-            <Input
-              type="text"
-              placeholder="Name"
-              {...register("name", { required: "Name is required" })}
-            />
-            {errors.name && (
-              <CustomFormError>{errors.name.message}</CustomFormError>
-            )}
-          </div>
-          <div>
-            <Input
-              {...register("email", { required: "Email is required" })}
-              type="email"
-              placeholder="Email"
-            />
-            {errors.email && (
-              <CustomFormError>{errors.email.message}</CustomFormError>
-            )}
-          </div>
-          <div>
-            <Textarea
-              rows={5}
-              placeholder="Message"
-              {...register("message", { required: "Message is required" })}
-            />
-            {errors.message && (
-              <CustomFormError>{errors.message.message}</CustomFormError>
-            )}
-          </div>
-          <div className="flex justify-end">
-            <Button type="submit" className="min-w-20" disabled={loading}>
-              {loading ? (
-                <Loader2 className="h-4 w-4 animate-spin" />
-              ) : (
-                "Connect"
+    <div className="bg-[#121212]">
+      <MaxWidthWrapper
+        className="flex flex-col items-center py-10"
+        id="contact"
+      >
+        <h1 className="mb-1.5 text-center text-4xl font-bold text-white sm:mb-5 sm:text-5xl">
+          Let&apos;s connect
+        </h1>
+        <p className="mx-4 max-w-prose text-center text-sm text-zinc-500 sm:text-base">
+          Have a project in mind or just want to say hello? Fill out the form
+          below and I&apos;ll get back to you as soon as possible.
+        </p>
+        <div className="w-full">
+          <form
+            onSubmit={handleSubmit(submitForm)}
+            className="sm:px-30 mt-5 flex flex-col space-y-3 px-10 md:px-60"
+          >
+            <div>
+              <Input
+                type="text"
+                placeholder="Name"
+                className="text-white"
+                {...register("name", { required: "Name is required" })}
+              />
+              {errors.name && (
+                <CustomFormError>{errors.name.message}</CustomFormError>
               )}
-            </Button>
-          </div>
-        </form>
-      </div>
-    </MaxWidthWrapper>
+            </div>
+            <div>
+              <Input
+                {...register("email", { required: "Email is required" })}
+                className="text-white"
+                type="email"
+                placeholder="Email"
+              />
+              {errors.email && (
+                <CustomFormError>{errors.email.message}</CustomFormError>
+              )}
+            </div>
+            <div>
+              <Textarea
+                rows={5}
+                className="text-white"
+                placeholder="Message"
+                {...register("message", { required: "Message is required" })}
+              />
+              {errors.message && (
+                <CustomFormError>{errors.message.message}</CustomFormError>
+              )}
+            </div>
+            <div className="flex justify-end">
+              <Button
+                variant="secondary"
+                type="submit"
+                className="min-w-20"
+                disabled={loading}
+              >
+                {loading ? (
+                  <Loader2 className="h-4 w-4 animate-spin" />
+                ) : (
+                  "Connect"
+                )}
+              </Button>
+            </div>
+          </form>
+        </div>
+      </MaxWidthWrapper>
+    </div>
   );
 };
 

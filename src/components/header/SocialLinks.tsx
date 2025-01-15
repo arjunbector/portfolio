@@ -19,7 +19,7 @@ const SocialLink = ({ href, icon, delay = 0, title }: SocialLinkProps) => (
   >
     <Link
       href={href}
-      className="text-gray-700 transition-colors hover:text-gray-900"
+      className="transition-colors"
       target="_blank"
       rel="noopener noreferrer"
       title={title}
