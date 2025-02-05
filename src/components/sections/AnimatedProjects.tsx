@@ -19,7 +19,7 @@ export default function AnimatedProjects() {
     offset: ["start start", "end start"],
   });
 
-  const scale = useTransform(scrollYProgress, [0, 0.8], [1, 500]);
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [1, 150, 600]);
 
   const letterSpacing = useTransform(
     scrollYProgress,
@@ -27,16 +27,10 @@ export default function AnimatedProjects() {
     ["normal", "0.2em", "0.3em"],
   );
 
-  const yOffset = useTransform(
-    scrollYProgress,
-    [0, 0.5, 1],
-    ["0%", "-5%", "-100%"],
-  );
-
   const xOffset = useTransform(
     scrollYProgress,
     [0, 0.5, 1],
-    ["0%", "-3%", "-3%"],
+    ["0%", "-2%", "-2%"],
   );
 
   // Listen to scrollYProgress changes
@@ -52,12 +46,11 @@ export default function AnimatedProjects() {
 
   return (
     <div className="relative" id="projects">
-      <div className="overflow-hidden">
-        <div ref={containerRef} className="relative h-[250vh]">
+      <div ref={containerRef} className="overflow-hidden">
+        <div className="relative h-[200vh]">
           <motion.div
             style={{
               scale,
-              y: yOffset,
             }}
             className="sticky top-0 flex h-screen items-center justify-center overflow-hidden bg-white"
           >

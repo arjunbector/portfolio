@@ -21,7 +21,7 @@ type projectType = {
 
 const TechnologyBadge = ({ tech }: { tech: string }) => {
   return (
-    <span className="rounded-md bg-zinc-100 p-1.5 text-xs font-semibold text-black">
+    <span className="rounded-md bg-zinc-800 p-1.5 text-xs font-semibold text-white">
       {tech}
     </span>
   );
@@ -29,7 +29,7 @@ const TechnologyBadge = ({ tech }: { tech: string }) => {
 const ProjectCard = ({ project }: { project: projectType }) => {
   return (
     <Link href={project.deployedLink || project.github!} target="_blank">
-        <div className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md bg-neutral-900 p-3 sm:h-[30rem] md:w-[30rem]">
+        <div className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md bg-zinc-900 p-3 sm:h-[30rem] md:w-[30rem]">
         <div className="h-52">
           <Image
             src={project.img}

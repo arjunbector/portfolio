@@ -41,7 +41,7 @@ const Connect = () => {
     });
     if (res.status === 200) {
       toast({
-        title: "Form submitted successfully.",
+        title: "Got your message.",
         description: "I'll get back to you soon.",
         variant: "success",
       });
@@ -52,7 +52,8 @@ const Connect = () => {
       });
     } else {
       toast({
-        description: "Failed to submit form.",
+        title: "Try again",
+        description: "Failed to connect.",
         variant: "destructive",
       });
     }
