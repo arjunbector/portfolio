@@ -12,6 +12,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = constructMetadata();
 
+// Add route segment config
+export const dynamic = 'force-static'
+export const revalidate = 3600 // revalidate every hour
+
 export default function RootLayout({
   children,
 }: Readonly<{
