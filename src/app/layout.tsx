@@ -6,6 +6,7 @@ import { Inter } from "next/font/google";
 import { ReactLenis } from "@/lib/lenis";
 import "./globals.css";
 import { NavbarProvider } from "@/components/header/HeaderContext";
+import { OpenPanelComponent } from "@openpanel/nextjs";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,18 +17,30 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const clientId = process.env.OPENPANEL_CLIENT_ID;
+
   return (
-    <html lang="en">
-      <ReactLenis root>
-        <body className={inter.className}>
-          <NavbarProvider>
-            <Header />
-            <Toaster />
-            {children}
-            <Analytics />
-          </NavbarProvider>
-        </body>
-      </ReactLenis>
-    </html>
+    <>
+      <OpenPanelComponent
+        clientId={clientId!}
+        trackScreenViews={true}
+        // trackAttributes={true}
+        // trackOutgoingLinks={true}
+        // If you have a user id, you can pass it here to identify the user
+        // profileId={'123'}
+      />
+      <html lang="en">
+        <ReactLenis root>
+          <body className={inter.className}>
+            <NavbarProvider>
+              <Header />
+              <Toaster />
+              {children}
+              <Analytics />
+            </NavbarProvider>
+          </body>
+        </ReactLenis>
+      </html>
+    </>
   );
 }
