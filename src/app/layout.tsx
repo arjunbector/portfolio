@@ -2,12 +2,21 @@ import Header from "@/components/Header";
 import { Toaster } from "@/components/ui/toaster";
 import { constructMetadata } from "@/lib/utils";
 import { Analytics } from "@vercel/analytics/react";
-import { Inter } from "next/font/google";
+import { Nunito, PT_Sans } from "next/font/google";
 import { ReactLenis } from "@/lib/lenis";
 import "./globals.css";
 import { NavbarProvider } from "@/components/header/HeaderContext";
 
-const inter = Inter({ subsets: ["latin"] });
+const nunito = Nunito({
+  variable: "--font-nunito",
+  subsets: ["latin"],
+});
+
+const ptSans = PT_Sans({
+  variable: "--font-pt-sans",
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata = constructMetadata();
 
@@ -25,7 +34,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <ReactLenis root>
-        <body className={inter.className}>
+        <body className={`${nunito.variable} ${ptSans.variable} antialiased relative`}>
+          <div className="texture" />
           <NavbarProvider>
             <Header />
             <Toaster />
