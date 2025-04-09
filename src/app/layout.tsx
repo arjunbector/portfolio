@@ -7,22 +7,35 @@ import { ReactLenis } from "@/lib/lenis";
 import "./globals.css";
 import { NavbarProvider } from "@/components/header/HeaderContext";
 
+// Optimize font loading with display swap and preload
 const nunito = Nunito({
   variable: "--font-nunito",
   subsets: ["latin"],
+  display: "swap",
+  preload: true,
 });
 
 const ptSans = PT_Sans({
   variable: "--font-pt-sans",
   subsets: ["latin"],
   weight: ["400", "700"],
+  display: "swap",
+  preload: true,
 });
 
 export const metadata = constructMetadata();
 
-// Add route segment config
+// Optimize static generation and caching
 export const dynamic = "force-static";
 export const revalidate = 3600; // revalidate every hour
+
+// Add viewport configuration for better mobile performance
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export default function RootLayout({
   children,
@@ -32,7 +45,7 @@ export default function RootLayout({
   const clientId = process.env.OPENPANEL_CLIENT_ID;
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <ReactLenis root>
         <body className={`${nunito.variable} ${ptSans.variable} antialiased relative`}>
           <div className="texture" />

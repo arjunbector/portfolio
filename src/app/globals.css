@@ -69,10 +69,38 @@
 @layer base {
   * {
     @apply border-border;
-    scroll-behavior: smooth
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  html {
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   body {
     @apply bg-background text-foreground;
+    min-height: 100dvh;
+    overscroll-behavior: none;
+  }
+
+  /* Optimize image loading */
+  img {
+    content-visibility: auto;
+  }
+
+  /* Improve button and link tap targets */
+  button, a {
+    @apply touch-manipulation;
+  }
+}
+
+/* Add smooth transitions for theme changes */
+@layer utilities {
+  .transition-colors {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
   }
 }
