@@ -4,8 +4,13 @@ import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
     try {
-        connectDB();
-        const responses = await FormResponse.find().sort({ createdAt: -1 }).select("-updatedAt -__v");
+        // Wait for the connection to complete
+        await connectDB();
+        
+        const responses = await FormResponse.find()
+            .sort({ createdAt: -1 })
+            .select("-updatedAt -__v");
+            
         if (!responses) {
             throw new Error("No responses found");
         }
