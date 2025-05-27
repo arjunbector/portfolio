@@ -60,12 +60,12 @@ const Connect = () => {
     setLoading(false);
   };
   return (
-    <div className="bg-[#121212]">
+    <div>
       <MaxWidthWrapper
         className="flex flex-col items-center py-10"
         id="contact"
       >
-        <h1 className="mb-1.5 text-center text-4xl font-bold text-white sm:mb-5 sm:text-5xl">
+        <h1 className="mb-1.5 text-center text-4xl font-bold sm:mb-5 sm:text-5xl">
           Let&apos;s connect
         </h1>
         <p className="mx-4 max-w-prose text-center text-sm text-zinc-500 sm:text-base">
@@ -112,7 +112,6 @@ const Connect = () => {
             </div>
             <div className="flex justify-end">
               <Button
-                variant="secondary"
                 type="submit"
                 className="min-w-20"
                 disabled={loading}

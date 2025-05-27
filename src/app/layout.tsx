@@ -47,7 +47,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <ReactLenis root>
-        <body className={`${nunito.variable} ${ptSans.variable} antialiased relative`}>
+        <body>
           <div className="texture" />
           <NavbarProvider>
             <Header />
