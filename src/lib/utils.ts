@@ -22,6 +22,6 @@ export function constructMetadata({
       title, description, images: [{ url: image }]
     },
     icons,
-    metadataBase: new URL("https://arjunbector.live")
+    metadataBase: new URL("https://arjunbector.in")
   }
 }

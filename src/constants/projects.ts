@@ -12,7 +12,7 @@ export const PROJECTS = [
         description: " A social hub where tech enthusiasts connect, collaborate, and share the latest in innovation and tech trends, or memes sometimes.",
         img: techTribe,
         github: "https://github.com/arjunbector/Tech-Tribe",
-        deployedLink: "https://techtribe.arjunbector.live",
+        deployedLink: "https://techtribe.arjunbector.in",
         technologies: ["Next.js", "Tailwind CSS", "Typescript", "PostgreSQL", "Shadcn UI", "Lucia Auth", "Prisma", "React-Query", "Uploadthing"]
     },
     {
@@ -27,7 +27,7 @@ export const PROJECTS = [
         description: "Lingo is a language learning platform that uses spaced repetition to help users learn new languages. The app provides a seamless learning experience with a clean and intuitive UI.",
         img: lingo,
         github: "https://github.com/arjunbector/Lingo",
-        deployedLink: "https://lingo.arjunbector.live",
+        deployedLink: "https://lingo.arjunbector.in",
         technologies: ["Next.js", "Tailwind CSS", "Typescript", "MongoDB", "Shadcn UI", "Clerk",]
     },
     {

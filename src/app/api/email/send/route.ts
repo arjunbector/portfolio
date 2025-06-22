@@ -19,13 +19,13 @@ export async function POST(req: Request) {
     
     const [senderResponse, notificationResponse] = await Promise.all([
       resend.emails.send({
-        from: 'Arjun <arjun@arjunbector.live>',
+        from: 'Arjun <arjun@arjunbector.in>',
         to: [validatedData.email],
         subject: 'Thank You for Reaching Out!',
         react: SenderEmailTemplate({ name: validatedData.name }),
       }),
       resend.emails.send({
-        from: 'Arjun <arjun@arjunbector.live>',
+        from: 'Arjun <arjun@arjunbector.in>',
         to: ["arjunbector@gmail.com"],
         subject: 'New Form Submission',
         react: NotificationEmail(validatedData)
