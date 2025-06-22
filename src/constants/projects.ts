@@ -35,7 +35,7 @@ export const PROJECTS = [
         description: "Case Cobra is an e-commerce platform that sells premium phone cases. The website is built with Next.js and Tailwind CSS, and features a clean and modern UI.",
         img: caseCobra,
         github: "https://github.com/arjunbector/phone-case-ecommerce",
-        deployedLink: "https://phone-case-ecommerce.vercel.app",
+        deployedLink: "https://phone-case-ecommerce.arjunbector.in",
         technologies: [
             "Next.js",
             "Tailwind CSS",
