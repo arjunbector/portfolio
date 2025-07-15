@@ -5,7 +5,7 @@ import type { MetadataRoute } from 'next'
 export default function sitemap(): MetadataRoute.Sitemap {
     const projects:MetadataRoute.Sitemap = PROJECTS.map(proj => {
         return {
-            url: proj.deployedLink,
+            url: proj.deployedLink!,
         }
     })
     const socialMedia:MetadataRoute.Sitemap = SOCIAL_MEDIA_HANDLES.map(sc => {
