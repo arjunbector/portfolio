@@ -35,7 +35,7 @@ const Header = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
             >
-              <Link href="#" className="text-2xl font-bold">
+              <Link href="/" className="text-2xl font-bold">
                 AB
               </Link>
             </motion.div>
@@ -47,9 +47,9 @@ const Header = () => {
               transition={{ duration: 0.3 }}
               className="hidden space-x-8 md:flex"
             >
-              <NavLink href="#">About</NavLink>
-              <NavLink href="#projects">Projects</NavLink>
-              <NavLink href="#contact">Contact</NavLink>
+              <NavLink href="/#">About</NavLink>
+              <NavLink href="/projects">Projects</NavLink>
+              <NavLink href="/#contact">Contact</NavLink>
             </motion.nav>
 
             <SocialLinks />

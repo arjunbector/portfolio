@@ -81,7 +81,6 @@ const Connect = () => {
               <Input
                 type="text"
                 placeholder="Name"
-                className="text-white"
                 {...register("name", { required: "Name is required" })}
               />
               {errors.name && (
@@ -91,7 +90,6 @@ const Connect = () => {
             <div>
               <Input
                 {...register("email", { required: "Email is required" })}
-                className="text-white"
                 type="email"
                 placeholder="Email"
               />
@@ -102,7 +100,6 @@ const Connect = () => {
             <div>
               <Textarea
                 rows={5}
-                className="text-white"
                 placeholder="Message"
                 {...register("message", { required: "Message is required" })}
               />
@@ -111,11 +108,7 @@ const Connect = () => {
               )}
             </div>
             <div className="flex justify-end">
-              <Button
-                type="submit"
-                className="min-w-20"
-                disabled={loading}
-              >
+              <Button type="submit" className="min-w-20" disabled={loading}>
                 {loading ? (
                   <Loader2 className="h-4 w-4 animate-spin" />
                 ) : (

@@ -6,7 +6,7 @@ import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import MaxWidthWrapper from "../ui/MaxWidthWrapper";
-import { buttonVariants } from "../ui/button";
+import { Button, buttonVariants } from "../ui/button";
 import BlurFade from "../ui/blur-fade";
 import { inView } from "framer-motion";
 
@@ -19,23 +19,34 @@ type projectType = {
   technologies: string[];
 };
 
-const TechnologyBadge = ({ tech }: { tech: string }) => {
+export const TechnologyBadge = ({ tech }: { tech: string }) => {
   return (
     <span className="rounded-md bg-secondary p-1.5 text-xs font-semibold text-secondary-foreground shadow-sm">
       {tech}
     </span>
   );
 };
-const ProjectCard = ({ project }: { project: projectType }) => {
+export const ShortProjectCard = ({
+  project,
+  className,
+}: {
+  project: projectType;
+  className?: string;
+}) => {
   return (
     <Link href={project.deployedLink || project.github!} target="_blank">
-      <div className="flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-md sm:h-[30rem] md:w-[30rem]">
+      <div
+        className={cn(
+          "flex h-[30rem] w-80 flex-col overflow-hidden rounded-md border p-3 shadow-md sm:h-[30rem] md:w-[30rem]",
+          className,
+        )}
+      >
         <div className="h-52">
           <Image
             src={project.img}
             alt=""
             placeholder="blur"
-            className="h-full w-full object-cover"
+            className="h-full w-full border object-cover"
           />
         </div>
         <div className="flex h-full flex-col justify-between">
@@ -104,20 +115,26 @@ const Projects = () => {
           </p>
         </BlurFade>
         <div className="mx-auto my-5 grid grid-cols-1 gap-4 lg:grid-cols-2">
-          {PROJECTS.map((project, idx) => (
+          {PROJECTS.slice(0, 4).map((project, idx) => (
             <BlurFade
               key={project.title}
               delay={0.25 + idx * 0.05}
               inView
               inViewMargin="-50px"
             >
-              <ProjectCard key={project.title} project={project} />
+              <ShortProjectCard key={project.title} project={project} />
             </BlurFade>
           ))}
+        </div>
+        <div className="flex w-full justify-center">
+          <BlurFade>
+            <Button variant="ghost" size="lg" className="mx-auto" asChild>
+              <Link href="/projects">Show More</Link>
+            </Button>
+          </BlurFade>
         </div>
       </MaxWidthWrapper>
     </div>
   );
 };
-
 export default Projects;

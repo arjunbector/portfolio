@@ -46,13 +46,13 @@ const MobileMenu = ({ isOpen }: MobileMenuProps) => {
               changeColor === "dark" ? "bg-[#121212] text-white" : "bg-white text-gray-900",
             )}
           >
-            <NavLink href="#" isMobile delay={1}>
+            <NavLink href="/#" isMobile delay={1}>
               About
             </NavLink>
-            <NavLink href="#projects" isMobile delay={2}>
+            <NavLink href="/projects" isMobile delay={2}>
               Projects
             </NavLink>
-            <NavLink href="#contact" isMobile delay={4}>
+            <NavLink href="/#contact" isMobile delay={4}>
               Contact
             </NavLink>
           </div>
