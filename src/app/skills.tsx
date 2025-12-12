@@ -39,7 +39,7 @@ export default function Skills() {
       <h1 className="text-center text-5xl font-light mb-20  ">
         My <span className="font-bold">Skills</span>
       </h1>
-      <div className="my-10 grid grid-cols-2 md:grid-cols-5 place-items-center gap-10">
+      <div className="my-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 place-items-center gap-10">
         {SKILLS.map((skill) => (
           <SkillBox {...skill} key={skill.label} />
         ))}
