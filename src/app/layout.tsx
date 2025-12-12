@@ -2,6 +2,7 @@ import NavBar from "@/components/navbar";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Sora } from "next/font/google";
 import "./globals.css";
+import { ReactLenis } from "@/lib/lenis";
 
 const sora = Sora({
   variable: "--font-sora-sans",
@@ -20,10 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${sora.variable}`}>
-        <NavBar />
-        {children}
-      </body>
+      <ReactLenis root>
+        <body className={`${sora.variable}`}>
+          <NavBar />
+          {children}
+        </body>
+      </ReactLenis>
     </html>
   );
 }
