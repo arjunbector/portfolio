@@ -35,7 +35,7 @@ const SKILLS: {
 
 export default function Skills() {
   return (
-    <MaxWidthWrapper className="my-20">
+    <MaxWidthWrapper className="my-20" id="skills">
       <h1 className="text-center text-5xl font-light mb-20  ">
         My <span className="font-bold">Skills</span>
       </h1>

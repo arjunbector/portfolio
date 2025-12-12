@@ -1,18 +1,19 @@
 import Link from "next/link";
 import MaxWidthWrapper from "./max-width-wrapper";
 import { Button } from "./ui/button";
+import { ScrollLink } from "./scroll-link";
 
 const NAV_ITEMS = [
   {
-    href: "/#about",
+    href: "#about",
     label: "About Me",
   },
   {
-    href: "/#skills",
+    href: "#skills",
     label: "Skills",
   },
   {
-    href: "/#projects",
+    href: "#projects",
     label: "Projects",
   },
 ] as const;
@@ -24,7 +25,6 @@ export default function NavBar() {
         <Link href="/" className="transition-opacity hover:opacity-70">
           AB
         </Link>
-
         <ul className="flex gap-10">
           {NAV_ITEMS.map((item) => (
             <li key={item.href}>
@@ -32,9 +32,8 @@ export default function NavBar() {
             </li>
           ))}
         </ul>
-
         <Button asChild>
-          <Link href="/#contact">Contact Me</Link>
+          <ScrollLink targetId="contact">Contact Me</ScrollLink>
         </Button>
       </nav>
     </MaxWidthWrapper>
@@ -42,11 +41,16 @@ export default function NavBar() {
 }
 
 function NavItem({ href, label }: { href: string; label: string }) {
+  const targetId = href.replace("#", "");
+
   return (
     <div className="group relative">
-      <Link href={href} className="transition-opacity hover:opacity-70">
+      <ScrollLink
+        targetId={targetId}
+        className="transition-opacity hover:opacity-70"
+      >
         {label}
-      </Link>
+      </ScrollLink>
       <div className="absolute left-0 h-px w-0 bg-black transition-all duration-500 ease-out group-hover:w-full" />
     </div>
   );
