@@ -25,7 +25,7 @@ export default function SocialHoverBoxes() {
   return (
     <div className="flex gap-4 mx-auto md:mx-0">
       {SOCIAL_LINKS.map((social) => (
-        <SocialBox {...social} />
+        <SocialBox {...social} key={social.href}/>
       ))}
     </div>
   );
